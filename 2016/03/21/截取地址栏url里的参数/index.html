@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -57,15 +57,16 @@
 
 
 
-<meta name="description" content="一入前端深似海">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码代码代码">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="方法一：正则法123456789101112function getQueryString(name) &amp;#123;    var reg = new RegExp(&apos;(^|&amp;amp;)&apos; + name + &apos;=([^&amp;amp;]*)(&amp;amp;|$)&apos;, &apos;i&apos;);    var r = window.location.search.substr(1).match(reg);    if (r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="截取地址栏url里的参数">
+<meta property="og:url" content="http://yoursite.com/2016/03/21/截取地址栏url里的参数/index.html">
 <meta property="og:site_name" content="代码代码代码">
-<meta property="og:description" content="一入前端深似海">
+<meta property="og:description" content="方法一：正则法123456789101112function getQueryString(name) &amp;#123;    var reg = new RegExp(&apos;(^|&amp;amp;)&apos; + name + &apos;=([^&amp;amp;]*)(&amp;amp;|$)&apos;, &apos;i&apos;);    var r = window.location.search.substr(1).match(reg);    if (r">
+<meta property="og:updated_time" content="2016-03-21T14:45:42.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码代码代码">
-<meta name="twitter:description" content="一入前端深似海">
+<meta name="twitter:title" content="截取地址栏url里的参数">
+<meta name="twitter:description" content="方法一：正则法123456789101112function getQueryString(name) &amp;#123;    var reg = new RegExp(&apos;(^|&amp;amp;)&apos; + name + &apos;=([^&amp;amp;]*)(&amp;amp;|$)&apos;, &apos;i&apos;);    var r = window.location.search.substr(1).match(reg);    if (r">
 
 
 
@@ -83,7 +84,7 @@
   };
 </script>
 
-  <title> 代码代码代码 </title>
+  <title> 截取地址栏url里的参数 | 代码代码代码 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -104,9 +105,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -193,9 +192,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -215,10 +214,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/21/截取地址栏url里的参数/" itemprop="url">
-                  截取地址栏url里的参数
-                </a>
+                截取地址栏url里的参数
               
             
           </h1>
@@ -283,153 +279,55 @@
       
 
       
-        
-          
-            <h2 id="方法一：正则法"><a href="#方法一：正则法" class="headerlink" title="方法一：正则法"></a>方法一：正则法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function getQueryString(name) &#123;</span><br><span class="line">    var reg = new RegExp(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);</span><br><span class="line">    var r = window.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">    <span class="keyword">if</span> (r != null) &#123;</span><br><span class="line">        <span class="keyword">return</span> unescape(r[<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> null;</span><br><span class="line">&#125;</span><br><span class="line">// 这样调用：</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名2"</span>));</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名3"</span>));</span><br></pre></td></tr></table></figure>
+        <h2 id="方法一：正则法"><a href="#方法一：正则法" class="headerlink" title="方法一：正则法"></a>方法一：正则法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function getQueryString(name) &#123;</span><br><span class="line">    var reg = new RegExp(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);</span><br><span class="line">    var r = window.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">    <span class="keyword">if</span> (r != null) &#123;</span><br><span class="line">        <span class="keyword">return</span> unescape(r[<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> null;</span><br><span class="line">&#125;</span><br><span class="line">// 这样调用：</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名2"</span>));</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名3"</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="方法二：split拆分法"><a href="#方法二：split拆分法" class="headerlink" title="方法二：split拆分法"></a>方法二：split拆分法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function GetRequest() &#123;</span><br><span class="line">    var url = location.search; //获取url中<span class="string">"?"</span>符后的字串</span><br><span class="line">    var theRequest = new Object();</span><br><span class="line">    <span class="keyword">if</span> (url.indexOf(<span class="string">"?"</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">        var str = url.substr(<span class="number">1</span>);</span><br><span class="line">        strs = str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">        <span class="keyword">for</span>(var i = <span class="number">0</span>; i &lt; strs.length; i ++) &#123;</span><br><span class="line">            theRequest[strs[i].split(<span class="string">"="</span>)[<span class="number">0</span>]] = unescape(strs[i].split(<span class="string">"="</span>)[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> theRequest;</span><br><span class="line">&#125;</span><br><span class="line">var Request = new Object();</span><br><span class="line">Request = GetRequest();</span><br><span class="line">// var 参数<span class="number">1</span>,参数<span class="number">2</span>,参数<span class="number">3</span>,参数N;</span><br><span class="line">// 参数<span class="number">1</span> = Request[<span class="string">'参数1'</span>];</span><br><span class="line">// 参数<span class="number">2</span> = Request[<span class="string">'参数2'</span>];</span><br><span class="line">// 参数<span class="number">3</span> = Request[<span class="string">'参数3'</span>];</span><br><span class="line">// 参数N = Request[<span class="string">'参数N'</span>];</span><br></pre></td></tr></table></figure>
 <h2 id="其中要注意的是-unescape"><a href="#其中要注意的是-unescape" class="headerlink" title="其中要注意的是 unescape"></a>其中要注意的是 unescape</h2><p>为什么要用unescape？ 上网查过资料后才知道 nescape() 函数可对通过 escape() 编码的字符串进行解码。 但是ECMAScript v3 已从标准中删除了 unescape() 函数，并反对使用它，因此应该用 decodeURI() 和 decodeURIComponent() 取而代之。</p>
 
-          
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/21/hello-world/" itemprop="url">
-                  我的第一篇博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T18:49:44+08:00" content="2016-03-21">
-              2016-03-21
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/日志/" itemprop="url" rel="index">
-                    <span itemprop="name">日志</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/21/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/21/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>话说自从入职到现在已经半年多了，从当初刚入职的一窍不通，到现在已经能够动手做项目，不知不觉地发现自己学到了好多。作为一名前端工程师，能够搭建一个自己的博客，也是个必备要求吧。于是我便上网翻遍各种资料，再加上自己的一些改造，把个人博客给搭好了。这是我写的第一篇文章，也是一个很好的开端，以后我会把我在平时工作中所遇到的问题，所学到的新知识写在博客中。也以此勉励自己。哈哈~ 既然入了前端开发这一行，那就坚持下去。希望几年后的自己能够达到一个新的高度。</p>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/21/hello-world/" rel="next" title="我的第一篇博客">
+                <i class="fa fa-chevron-left"></i> 我的第一篇博客
+              </a>
+            
+          </div>
 
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -437,6 +335,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/21/截取地址栏url里的参数/"
+           data-title="截取地址栏url里的参数" data-url="http://yoursite.com/2016/03/21/截取地址栏url里的参数/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -456,8 +362,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/head.jpg"
@@ -509,6 +424,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一：正则法"><span class="nav-number">1.</span> <span class="nav-text">方法一：正则法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二：split拆分法"><span class="nav-number">2.</span> <span class="nav-text">方法二：split拆分法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其中要注意的是-unescape"><span class="nav-number">3.</span> <span class="nav-text">其中要注意的是 unescape</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -591,6 +523,167 @@
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
