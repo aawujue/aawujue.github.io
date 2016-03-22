@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next mist use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -72,7 +72,7 @@
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -194,6 +194,103 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/22/2016-3-22/" itemprop="url">
+                  2016-3-22
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-22T16:57:35+08:00" content="2016-03-22">
+              2016-03-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/22/2016-3-22/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/22/2016-3-22/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="实现安卓-ios客户端检测的方法"><a href="#实现安卓-ios客户端检测的方法" class="headerlink" title="实现安卓 ios客户端检测的方法"></a>实现安卓 ios客户端检测的方法</h2><p>今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios </p>
+<h3 id="具体实现方法如下："><a href="#具体实现方法如下：" class="headerlink" title="具体实现方法如下："></a>具体实现方法如下：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line">var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1; //android终端或者uc浏览器</span><br><span class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端检测</span><br><span class="line">if(isAndroid)&#123;</span><br><span class="line">//如果检测为android。。。</span><br><span class="line">&#125;else if(isiOS)&#123;</span><br><span class="line">//如果检测为ios。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -468,7 +565,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -582,13 +679,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
 
   
 
