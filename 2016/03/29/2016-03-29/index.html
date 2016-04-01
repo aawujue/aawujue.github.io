@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>实现安卓 ios客户端检测的方法 | 小白爱吃瓜的博客</title>
+    <title>cento 下安装node.js的方法 | 小白爱吃瓜的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小白爱吃瓜">
     
-    <meta name="description" content="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios具体实现方法如下：12345678var u = navigator.userAgent, app = navigator.appVersion;var isAndroid = u.indexOf(&#39;Android&#39;) &amp;gt; -1">
+    <meta name="description" content="学了这么久的nodejs 都是在本地部署的，今天正好有个朋友给了我一个linux服务器，于是我便尝试在这个服务器上部署node.js, 折腾了大半天时间，前前后后踩了N多个坑，总结了一个最快捷的安装方法
+如何在cento下安装Node.js环境
+首先你得有个服务器
+
+安装SecureCRT 工具（自">
     
     
     
@@ -65,15 +69,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/22/2016-3-22/" title="实现安卓 ios客户端检测的方法" itemprop="url">实现安卓 ios客户端检测的方法</a>
+      <a href="/2016/03/29/2016-03-29/" title="cento 下安装node.js的方法" itemprop="url">cento 下安装node.js的方法</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="小白爱吃瓜">小白爱吃瓜</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-22T08:57:35.000Z" itemprop="datePublished">2016-03-22</time>
-    更新日期:<time datetime="2016-03-23T02:20:45.697Z" itemprop="dateModified">2016-03-23</time>
+    <time datetime="2016-03-29T15:08:54.000Z" itemprop="datePublished">2016-03-29</time>
+    更新日期:<time datetime="2016-04-01T11:29:22.344Z" itemprop="dateModified">2016-04-01</time>
     
   </p>
 </header>
@@ -82,17 +86,35 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><span class="toc-number">1.</span> <span class="toc-text">今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现方法如下："><span class="toc-number">1.1.</span> <span class="toc-text">具体实现方法如下：</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在cento下安装Node-js环境"><span class="toc-number">1.</span> <span class="toc-text">如何在cento下安装Node.js环境</span></a></li></ol>
 		</div>
 		
-		<h2 id="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><a href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios" class="headerlink" title="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"></a>今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</h2><h3 id="具体实现方法如下："><a href="#具体实现方法如下：" class="headerlink" title="具体实现方法如下："></a>具体实现方法如下：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line">var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1; //android终端或者uc浏览器</span><br><span class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端检测</span><br><span class="line">if(isAndroid)&#123;</span><br><span class="line">//如果检测为android。。。</span><br><span class="line">&#125;else if(isiOS)&#123;</span><br><span class="line">//如果检测为ios。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>学了这么久的nodejs 都是在本地部署的，今天正好有个朋友给了我一个linux服务器，于是我便尝试在这个服务器上部署node.js, 折腾了大半天时间，前前后后踩了N多个坑，总结了一个最快捷的安装方法</p>
+<h2 id="如何在cento下安装Node-js环境"><a href="#如何在cento下安装Node-js环境" class="headerlink" title="如何在cento下安装Node.js环境"></a>如何在cento下安装Node.js环境</h2><ol>
+<li><p>首先你得有个服务器</p>
+</li>
+<li><p>安装SecureCRT 工具（自行百度下载）</p>
+</li>
+<li><p>使用SecureCRT 连接服务器 </p>
+</li>
+<li><p>在SecureCRT命令行输入curl <a href="https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh" target="_blank" rel="external">https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh</a> | bash下载nvm 管理工具</p>
+</li>
+<li><p>安装成功后输入 nvm list-remote 列出所有可安装的nodejs 版本</p>
+</li>
+<li><p>选择一个版本安装 例如 nvm install v5.9.0</p>
+</li>
+<li><p>安装成功后输入 node –version 便能显示当前nodejs版本信息了</p>
+</li>
+<li><p>输入 node 便能进入node命令行了</p>
+</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/javascript/">javascript</a>
+  <span></span> <a href="/tags/nodejs/">nodejs</a>
   </div>
 
 
@@ -100,7 +122,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/03/22/2016-3-22/" data-title="实现安卓 ios客户端检测的方法 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/03/29/2016-03-29/" data-title="cento 下安装node.js的方法 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -111,9 +133,9 @@
  
 
 <div class="next">
-<a href="/2016/03/21/截取地址栏url里的参数/"  title="截取地址栏url里的参数">
+<a href="/2016/03/23/2016-03-23/"  title="css清除浮动的问题">
  <strong>NEXT:</strong><br/> 
- <span>截取地址栏url里的参数
+ <span>css清除浮动的问题
 </span>
 </a>
 </div>
@@ -130,7 +152,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><span class="toc-number">1.</span> <span class="toc-text">今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现方法如下："><span class="toc-number">1.1.</span> <span class="toc-text">具体实现方法如下：</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#如何在cento下安装Node-js环境"><span class="toc-number">1.</span> <span class="toc-text">如何在cento下安装Node.js环境</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -155,7 +177,11 @@
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
+			<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+		
 			<li><a href="/tags/javascript/" title="javascript">javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>1</sup></a></li>
 		
 			<li><a href="/tags/日志/" title="日志">日志<sup>1</sup></a></li>
 		

@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>截取地址栏url里的参数 | 小白爱吃瓜的博客</title>
+    <title>实现安卓 ios客户端检测的方法 | 小白爱吃瓜的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小白爱吃瓜">
     
-    <meta name="description" content="方法一：正则法123456789101112function getQueryString(name) &amp;#123;    var reg = new RegExp(&#39;(^|&amp;amp;)&#39; + name + &#39;=([^&amp;amp;]*)(&amp;amp;|$)&#39;, &#39;i&#39;);    var r = wind">
+    <meta name="description" content="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios具体实现方法如下：12345678var u = navigator.userAgent, app = navigator.appVersion;var isAndroid = u.indexOf(&#39;Android&#39;) &amp;gt; -1">
     
     
     
@@ -65,15 +65,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/21/截取地址栏url里的参数/" title="截取地址栏url里的参数" itemprop="url">截取地址栏url里的参数</a>
+      <a href="/2016/03/22/2016-03-22/" title="实现安卓 ios客户端检测的方法" itemprop="url">实现安卓 ios客户端检测的方法</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="小白爱吃瓜">小白爱吃瓜</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-21T14:04:03.000Z" itemprop="datePublished">2016-03-21</time>
-    更新日期:<time datetime="2016-03-21T14:45:42.175Z" itemprop="dateModified">2016-03-21</time>
+    <time datetime="2016-03-22T08:57:35.000Z" itemprop="datePublished">2016-03-22</time>
+    更新日期:<time datetime="2016-03-23T02:20:45.697Z" itemprop="dateModified">2016-03-23</time>
     
   </p>
 </header>
@@ -82,12 +82,10 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法一：正则法"><span class="toc-number">1.</span> <span class="toc-text">方法一：正则法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法二：split拆分法"><span class="toc-number">2.</span> <span class="toc-text">方法二：split拆分法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其中要注意的是-unescape"><span class="toc-number">3.</span> <span class="toc-text">其中要注意的是 unescape</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><span class="toc-number">1.</span> <span class="toc-text">今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现方法如下："><span class="toc-number">1.1.</span> <span class="toc-text">具体实现方法如下：</span></a></li></ol></li></ol>
 		</div>
 		
-		<h2 id="方法一：正则法"><a href="#方法一：正则法" class="headerlink" title="方法一：正则法"></a>方法一：正则法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function getQueryString(name) &#123;</span><br><span class="line">    var reg = new RegExp(<span class="string">'(^|&amp;)'</span> + name + <span class="string">'=([^&amp;]*)(&amp;|$)'</span>, <span class="string">'i'</span>);</span><br><span class="line">    var r = window.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">    <span class="keyword">if</span> (r != null) &#123;</span><br><span class="line">        <span class="keyword">return</span> unescape(r[<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> null;</span><br><span class="line">&#125;</span><br><span class="line">// 这样调用：</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名2"</span>));</span><br><span class="line">alert(GetQueryString(<span class="string">"参数名3"</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="方法二：split拆分法"><a href="#方法二：split拆分法" class="headerlink" title="方法二：split拆分法"></a>方法二：split拆分法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function GetRequest() &#123;</span><br><span class="line">    var url = location.search; //获取url中<span class="string">"?"</span>符后的字串</span><br><span class="line">    var theRequest = new Object();</span><br><span class="line">    <span class="keyword">if</span> (url.indexOf(<span class="string">"?"</span>) != <span class="number">-1</span>) &#123;</span><br><span class="line">        var str = url.substr(<span class="number">1</span>);</span><br><span class="line">        strs = str.split(<span class="string">"&amp;"</span>);</span><br><span class="line">        <span class="keyword">for</span>(var i = <span class="number">0</span>; i &lt; strs.length; i ++) &#123;</span><br><span class="line">            theRequest[strs[i].split(<span class="string">"="</span>)[<span class="number">0</span>]] = unescape(strs[i].split(<span class="string">"="</span>)[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> theRequest;</span><br><span class="line">&#125;</span><br><span class="line">var Request = new Object();</span><br><span class="line">Request = GetRequest();</span><br><span class="line">// var 参数<span class="number">1</span>,参数<span class="number">2</span>,参数<span class="number">3</span>,参数N;</span><br><span class="line">// 参数<span class="number">1</span> = Request[<span class="string">'参数1'</span>];</span><br><span class="line">// 参数<span class="number">2</span> = Request[<span class="string">'参数2'</span>];</span><br><span class="line">// 参数<span class="number">3</span> = Request[<span class="string">'参数3'</span>];</span><br><span class="line">// 参数N = Request[<span class="string">'参数N'</span>];</span><br></pre></td></tr></table></figure>
-<h2 id="其中要注意的是-unescape"><a href="#其中要注意的是-unescape" class="headerlink" title="其中要注意的是 unescape"></a>其中要注意的是 unescape</h2><p>为什么要用unescape？ 上网查过资料后才知道 nescape() 函数可对通过 escape() 编码的字符串进行解码。 但是ECMAScript v3 已从标准中删除了 unescape() 函数，并反对使用它，因此应该用 decodeURI() 和 decodeURIComponent() 取而代之。</p>
+		<h2 id="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><a href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios" class="headerlink" title="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"></a>今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</h2><h3 id="具体实现方法如下："><a href="#具体实现方法如下：" class="headerlink" title="具体实现方法如下："></a>具体实现方法如下：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line">var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1; //android终端或者uc浏览器</span><br><span class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端检测</span><br><span class="line">if(isAndroid)&#123;</span><br><span class="line">//如果检测为android。。。</span><br><span class="line">&#125;else if(isiOS)&#123;</span><br><span class="line">//如果检测为ios。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -98,16 +96,11 @@
   </div>
 
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/javascript/">javascript</a>
-</div>
-
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/03/21/截取地址栏url里的参数/" data-title="截取地址栏url里的参数 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/03/22/2016-03-22/" data-title="实现安卓 ios客户端检测的方法 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -117,18 +110,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/03/22/2016-3-22/" title="实现安卓 ios客户端检测的方法">
+ <a href="/2016/03/23/2016-03-23/" title="css清除浮动的问题">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  实现安卓 ios客户端检测的方法</span>
+  css清除浮动的问题</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/03/21/hello-world/"  title="我的第一篇博客">
+<a href="/2016/03/21/2016-03-21/"  title="截取地址栏url里的参数">
  <strong>NEXT:</strong><br/> 
- <span>我的第一篇博客
+ <span>截取地址栏url里的参数
 </span>
 </a>
 </div>
@@ -145,7 +138,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法一：正则法"><span class="toc-number">1.</span> <span class="toc-text">方法一：正则法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法二：split拆分法"><span class="toc-number">2.</span> <span class="toc-text">方法二：split拆分法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其中要注意的是-unescape"><span class="toc-number">3.</span> <span class="toc-text">其中要注意的是 unescape</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><span class="toc-number">1.</span> <span class="toc-text">今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现方法如下："><span class="toc-number">1.1.</span> <span class="toc-text">具体实现方法如下：</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
@@ -170,7 +163,11 @@
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
+			<li><a href="/tags/css/" title="css">css<sup>1</sup></a></li>
+		
 			<li><a href="/tags/javascript/" title="javascript">javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>1</sup></a></li>
 		
 			<li><a href="/tags/日志/" title="日志">日志<sup>1</sup></a></li>
 		
