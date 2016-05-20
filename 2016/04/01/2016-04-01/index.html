@@ -1,0 +1,383 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>css hack | 小白爱吃瓜的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="小白爱吃瓜">
+    
+    <meta name="description" content="写在前面的话做前端经常css样式在不同浏览器上表示不一致的情况，基于这个原因，某些时候就得不太情愿地使用这个不友好的形式来实现浏览器兼容。
+什么是css hack由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/icon2.jpg" alt="小白爱吃瓜的博客" title="小白爱吃瓜的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="小白爱吃瓜的博客">小白爱吃瓜的博客</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/01/2016-04-01/" title="css hack" itemprop="url">css hack</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="小白爱吃瓜">小白爱吃瓜</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-04-01T13:57:04.000Z" itemprop="datePublished">2016-04-01</time>
+    更新日期:<time datetime="2016-04-11T14:21:48.749Z" itemprop="dateModified">2016-04-11</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面的话"><span class="toc-number">1.</span> <span class="toc-text">写在前面的话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是css-hack"><span class="toc-number">2.</span> <span class="toc-text">什么是css hack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-hack的原理"><span class="toc-number">3.</span> <span class="toc-text">CSS hack的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-hack分类"><span class="toc-number">4.</span> <span class="toc-text">CSS hack分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-hack方式一：条件注释法"><span class="toc-number"></span> <span class="toc-text">CSS hack方式一：条件注释法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-hack方式二：类内属性前缀法"><span class="toc-number"></span> <span class="toc-text">CSS hack方式二：类内属性前缀法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-hack方式三：选择器前缀法"><span class="toc-number"></span> <span class="toc-text">CSS hack方式三：选择器前缀法</span></a>
+		</div>
+		
+		<h4 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h4><p>做前端经常css样式在不同浏览器上表示不一致的情况，基于这个原因，某些时候就得不太情愿地使用这个不友好的形式来实现浏览器兼容。</p>
+<h4 id="什么是css-hack"><a href="#什么是css-hack" class="headerlink" title="什么是css hack"></a>什么是css hack</h4><p>由于不同厂商的流览器或某浏览器的不同版本（如IE6-IE11,Firefox/Safari/Opera/Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，我们为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack!</p>
+<h4 id="CSS-hack的原理"><a href="#CSS-hack的原理" class="headerlink" title="CSS hack的原理"></a>CSS hack的原理</h4><p>由于不同的浏览器和浏览器各版本对CSS的支持及解析结果不一样，以及CSS优先级对浏览器展现效果的影响，我们可以据此针对不同的浏览器情景来应用不同的CSS。</p>
+<h4 id="CSS-hack分类"><a href="#CSS-hack分类" class="headerlink" title="CSS hack分类"></a>CSS hack分类</h4><p>CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及IE条件注释法（即HTML头部引用if IE）Hack，实际项目中CSS Hack大部分是针对IE浏览器不同版本之间的表现差异而引入的</p>
+<ol>
+<li>属性前缀法(即类内部Hack)：例如 IE6能识别下划线”<em>“和星号” <em> “，IE7能识别星号” </em> “，但不能识别下划线”</em>“，IE6~IE10都认识”\9”，但firefox前述三个都不能认识。</li>
+<li>选择器前缀法(即选择器Hack)：例如 IE6能识别<em>html .class{}，IE7能识别</em>+html .class{}或者*:first-child+html .class{}。<br>3.IE条件注释法(即HTML条件注释Hack)：针对所有IE(注：IE10+已经不再支持条件注释)： <!--[if IE]>IE浏览器显示的内容 <![endif]-->，针对IE6及以下版本： <!--[if lt IE 6]>只在IE6-显示的内容 <![endif]-->。这类Hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</li>
+</ol>
+<p>CSS hack书写顺序，一般是将适用范围广、被识别能力强的CSS定义在前面。</p>
+<h3 id="CSS-hack方式一：条件注释法"><a href="#CSS-hack方式一：条件注释法" class="headerlink" title="CSS hack方式一：条件注释法"></a>CSS hack方式一：条件注释法</h3><p>这种方式是IE浏览器专有的Hack方式，微软官方推荐使用的hack方式。举例如下</p>
+<pre><code>只在IE下生效
+`&lt;!--[if IE]&gt;
+这段文字只在IE浏览器显示
+&lt;![endif]--&gt;`
+
+只在IE6下生效
+`&lt;!--[if IE 6]&gt;
+这段文字只在IE6浏览器显示
+&lt;![endif]--&gt;`
+
+只在IE6以上版本生效
+`&lt;!--[if gte IE 6]&gt;
+这段文字只在IE6以上(包括)版本IE浏览器显示
+&lt;![endif]--&gt;`
+
+只在IE8上不生效
+`&lt;!--[if ! IE 8]&gt;
+这段文字在非IE8浏览器显示
+&lt;![endif]--&gt;`
+
+非IE浏览器生效
+`&lt;!--[if !IE]&gt;
+这段文字只在非IE浏览器显示
+&lt;![endif]--&gt;`
+</code></pre><h3 id="CSS-hack方式二：类内属性前缀法"><a href="#CSS-hack方式二：类内属性前缀法" class="headerlink" title="CSS hack方式二：类内属性前缀法"></a>CSS hack方式二：类内属性前缀法</h3><p>属性前缀法是在CSS样式属性名前加上一些只有特定浏览器才能识别的hack前缀，以达到预期的页面展现效果。</p>
+<h3 id="CSS-hack方式三：选择器前缀法"><a href="#CSS-hack方式三：选择器前缀法" class="headerlink" title="CSS hack方式三：选择器前缀法"></a>CSS hack方式三：选择器前缀法</h3><p>选择器前缀法是针对一些页面表现不一致或者需要特殊对待的浏览器，在CSS选择器前加上一些只有某些特定浏览器才能识别的前缀进行hack。</p>
+<p><code>*html *前缀只对IE6生效</code><br><code>*+html *+前缀只对IE7生效</code><br>@media screen\9{…}只对IE6/7生效<br>@media \0screen {body { background: red; }}只对IE8有效<br>@media \0screen\,screen\9{body { background: blue; }}只对IE6/7/8有效<br>@media screen\0 {body { background: green; }} 只对IE8/9/10有效<br>@media screen and (min-width:0\0) {body { background: gray; }} 只对IE9/10有效<br>@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {body { background: orange; }} 只对IE10有效<br>等等</p>
+<p>一般情况下，我们尽量避免使用CSS hack，但是有些情况为了顾及用户体验实现向下兼容，不得已才使用hack。比如由于IE8及以下版本不支持CSS3,而我们的项目页面使用了大量CSS3新属性在IE9/Firefox/Chrome下正常渲染，这种情况下如果不使用css3pie或htc或条件注释等方法时,可能就得让IE8-的专属hack出马了。使用hack虽然对页面表现的一致性有好处，但过多的滥用会造成html文档混乱不堪，增加管理和维护的负担。相信只要大家一起努力，少用、慎用hack，未来一定会促使浏览器厂商的标准越来越趋于统一，顺利过渡到标准浏览器的主流时代。抛弃那些陈旧的IE hack，必将减轻我们编码的复杂度，少做无用功。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/css/">css</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/css/">css</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/04/01/2016-04-01/" data-title="css hack | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/04/10/2016-04-10/" title="jquery绑定事件的几个方法和区别">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  jquery绑定事件的几个方法和区别</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/03/29/2016-03-29/"  title="cento 下安装node.js的方法">
+ <strong>NEXT:</strong><br/> 
+ <span>cento 下安装node.js的方法
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#写在前面的话"><span class="toc-number">1.</span> <span class="toc-text">写在前面的话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是css-hack"><span class="toc-number">2.</span> <span class="toc-text">什么是css hack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-hack的原理"><span class="toc-number">3.</span> <span class="toc-text">CSS hack的原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS-hack分类"><span class="toc-number">4.</span> <span class="toc-text">CSS hack分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-hack方式一：条件注释法"><span class="toc-number"></span> <span class="toc-text">CSS hack方式一：条件注释法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-hack方式二：类内属性前缀法"><span class="toc-number"></span> <span class="toc-text">CSS hack方式二：类内属性前缀法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS-hack方式三：选择器前缀法"><span class="toc-number"></span> <span class="toc-text">CSS hack方式三：选择器前缀法</span></a>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/css/" title="css">css<sup>2</sup></a></li>
+		
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+		
+			<li><a href="/categories/nodejs/" title="nodejs">nodejs<sup>1</sup></a></li>
+		
+			<li><a href="/categories/日志/" title="日志">日志<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/css/" title="css">css<sup>2</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>2</sup></a></li>
+		
+			<li><a href="/tags/jquery/" title="jquery">jquery<sup>1</sup></a></li>
+		
+			<li><a href="/tags/nodejs/" title="nodejs">nodejs<sup>1</sup></a></li>
+		
+			<li><a href="/tags/日志/" title="日志">日志<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Author by © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="小白爱吃瓜">小白爱吃瓜</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"smile2016"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>

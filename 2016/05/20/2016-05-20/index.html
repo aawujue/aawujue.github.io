@@ -4,12 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>我的第一篇博客 | 小白爱吃瓜的博客</title>
+    <title>jquery插件制作 | 小白爱吃瓜的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小白爱吃瓜">
     
-    <meta name="description" content="话说自从入职到现在已经半年多了，从当初刚入职的一窍不通，到现在已经能够动手做项目，不知不觉地发现自己学到了好多。作为一名前端工程师，能够搭建一个自己的博客，也是个必备要求吧。于是我便上网翻遍各种资料，再加上自己的一些改造，把个人博客给搭好了。这是我写的第一篇文章，也是一个很好的开端，以后我会把我在平">
+    <meta name="description" content="制作简易的jquery插件首先介绍一下jQuery.fn， 研究一下jQuery源码,
+代码如下
+jQuery.fn = jQuery.prototype ={   
+　　　init: function( selector, context ){//….  　　　　//……    };   
+不难发">
     
     
     
@@ -65,15 +69,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/21/hello-world/" title="我的第一篇博客" itemprop="url">我的第一篇博客</a>
+      <a href="/2016/05/20/2016-05-20/" title="jquery插件制作" itemprop="url">jquery插件制作</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="小白爱吃瓜">小白爱吃瓜</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-21T10:49:44.623Z" itemprop="datePublished">2016-03-21</time>
-    更新日期:<time datetime="2016-03-21T14:46:34.533Z" itemprop="dateModified">2016-03-21</time>
+    <time datetime="2016-05-20T11:20:12.000Z" itemprop="datePublished">2016-05-20</time>
+    更新日期:<time datetime="2016-05-20T11:53:02.139Z" itemprop="dateModified">2016-05-20</time>
     
   </p>
 </header>
@@ -82,30 +86,27 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#制作简易的jquery插件"><span class="toc-number">1.</span> <span class="toc-text">制作简易的jquery插件</span></a></li></ol>
 		</div>
 		
-		<p>话说自从入职到现在已经半年多了，从当初刚入职的一窍不通，到现在已经能够动手做项目，不知不觉地发现自己学到了好多。作为一名前端工程师，能够搭建一个自己的博客，也是个必备要求吧。于是我便上网翻遍各种资料，再加上自己的一些改造，把个人博客给搭好了。这是我写的第一篇文章，也是一个很好的开端，以后我会把我在平时工作中所遇到的问题，所学到的新知识写在博客中。也以此勉励自己。哈哈~ 既然入了前端开发这一行，那就坚持下去。希望几年后的自己能够达到一个新的高度。</p>
+		<h1 id="制作简易的jquery插件"><a href="#制作简易的jquery插件" class="headerlink" title="制作简易的jquery插件"></a>制作简易的jquery插件</h1><p>首先介绍一下jQuery.fn， 研究一下jQuery源码,</p>
+<pre><code>代码如下
+jQuery.fn = jQuery.prototype ={   
+</code></pre><p>　　　init: function( selector, context ){//….  　<br>　　　//……<br>    };   </p>
+<p>不难发现 ，jQuery.fn指向原型方法，于是我们就可以向jquery原型里添加方法进行插件的开发<br>现在开始动手制作一个简单的图片居中插件</p>
+<p>首先需要定义一个js文件，文件名为了通俗易懂，取名为center.jQuery.js(当然，你可以随意取名)，在你的html里依次引用jquert和center.jQuery.js</p>
+<p>现在开始书写插件代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">(function($) &#123;</span><br><span class="line">    jQuery.fn.center = function () &#123;</span><br><span class="line">        var element = this; //首先将传入的参数赋值给一个变量</span><br><span class="line">        $(element).load(function()&#123;</span><br><span class="line">            changeCss();</span><br><span class="line">            $(window).resize(function () &#123; //窗口大小变化时调用changeCss方法调整图片位置</span><br><span class="line">                changeCss();</span><br><span class="line">            &#125;);</span><br><span class="line">            function changeCss() &#123;</span><br><span class="line">            //依次获取图片和窗口的宽高</span><br><span class="line">                var imgWidth = $(element).width();</span><br><span class="line">                var imgHeight = $(element).height();</span><br><span class="line">                var windowWidth = $(window).width();</span><br><span class="line">                var windowHeight = $(window).height();</span><br><span class="line">				//利用css方法设置图片位置</span><br><span class="line">                $(element).css(&#123;</span><br><span class="line">                    &quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">                    &quot;left&quot;: windowWidth / 2 - imgWidth / 2,</span><br><span class="line">                    &quot;top&quot;: windowHeight / 2 - imgHeight / 2</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure></p>
+<p>使用插件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;center.jQuery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;img style=&quot;width: 200px;height: 200px;&quot;  src=&quot;P50407-152937.jpg&quot; alt=&quot;hhh&quot;/&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    $(function () &#123;</span><br><span class="line">        $(&quot;img&quot;).center();</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/日志/">日志</a>
-  </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/日志/">日志</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/03/21/hello-world/" data-title="我的第一篇博客 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/05/20/2016-05-20/" data-title="jquery插件制作 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -114,14 +115,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/21/2016-03-21/" title="截取地址栏url里的参数">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  截取地址栏url里的参数</span>
+
+<div class="next">
+<a href="/2016/04/10/2016-04-10/"  title="jquery绑定事件的几个方法和区别">
+ <strong>NEXT:</strong><br/> 
+ <span>jquery绑定事件的几个方法和区别
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -135,7 +136,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#制作简易的jquery插件"><span class="toc-number">1.</span> <span class="toc-text">制作简易的jquery插件</span></a></li></ol>
   </div>
 
 <div id="asidepart">
