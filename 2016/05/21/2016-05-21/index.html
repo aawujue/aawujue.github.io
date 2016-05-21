@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>实现安卓 ios客户端检测的方法 | 小白爱吃瓜的博客</title>
+    <title>CSS3 text-rendering属性 | 小白爱吃瓜的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="小白爱吃瓜">
     
-    <meta name="description" content="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios具体实现方法如下：12345678var u = navigator.userAgent, app = navigator.appVersion;var isAndroid = u.indexOf(&#39;Android&#39;) &amp;gt; -1">
+    <meta name="description" content="这种非标准的属性目前不被推荐。我们一般会找一个可以替代的方法来完成相同的功能，不到外不得已，最好别用。
+CSS的这个text-rendering属性通常被用在Windows和Linux系统中，用来给渲染引擎提供信息，让文本在速度和可读性方面得到优化（控制显示在线字体的微妙细节）。目前只有Firefo">
     
     
     
@@ -65,15 +66,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/03/22/2016-03-22/" title="实现安卓 ios客户端检测的方法" itemprop="url">实现安卓 ios客户端检测的方法</a>
+      <a href="/2016/05/21/2016-05-21/" title="CSS3 text-rendering属性" itemprop="url">CSS3 text-rendering属性</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="小白爱吃瓜">小白爱吃瓜</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-03-22T08:57:35.000Z" itemprop="datePublished">2016-03-22</time>
-    更新日期:<time datetime="2016-04-11T14:21:15.344Z" itemprop="dateModified">2016-04-11</time>
+    <time datetime="2016-05-21T04:16:10.000Z" itemprop="datePublished">2016-05-21</time>
+    更新日期:<time datetime="2016-05-21T04:20:56.481Z" itemprop="dateModified">2016-05-21</time>
     
   </p>
 </header>
@@ -82,30 +83,31 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><span class="toc-number">1.</span> <span class="toc-text">今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现方法如下："><span class="toc-number">1.1.</span> <span class="toc-text">具体实现方法如下：</span></a></li></ol></li></ol>
+		
 		</div>
 		
-		<h2 id="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><a href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios" class="headerlink" title="今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"></a>今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</h2><h3 id="具体实现方法如下："><a href="#具体实现方法如下：" class="headerlink" title="具体实现方法如下："></a>具体实现方法如下：</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var u = navigator.userAgent, app = navigator.appVersion;</span><br><span class="line">var isAndroid = u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1; //android终端或者uc浏览器</span><br><span class="line">var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端检测</span><br><span class="line">if(isAndroid)&#123;</span><br><span class="line">//如果检测为android。。。</span><br><span class="line">&#125;else if(isiOS)&#123;</span><br><span class="line">//如果检测为ios。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+		<p>这种非标准的属性目前不被推荐。我们一般会找一个可以替代的方法来完成相同的功能，不到外不得已，最好别用。</p>
+<p>CSS的这个text-rendering属性通常被用在Windows和Linux系统中，用来给渲染引擎提供信息，让文本在速度和可读性方面得到优化（控制显示在线字体的微妙细节）。目前只有Firefox和google支持此属性；而且它是一个SVG（可缩放矢量图形）属性，它不被定义在任何CSS标准里。</p>
+<p>它的属性值具体如下：</p>
+<p>auto：    浏览器将根据情况来优化文本速度、可读性、精度。实际中，Gecko内核浏览器比如FF下如果字体大小是20px或者更大，将采用optimizel Legibility属性，否则使用optimizeSpeed属性。</p>
+<p>optimizeSpeed：   Gecko内核的浏览器将强调可读性和几何精度，同时绘制文本渲染速度，禁用字距和连写。</p>
+<p>optimizeLegibility： Gecko内核的浏览器将强调可读性和几何精度，同时绘制文本渲染速度，启用字距和连写。</p>
+<p>geometricPrecision：目前这个属性的意义和optimizelegibility一样</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/javascript/">javascript</a>
+  <span></span> <a href="/tags/css/">css</a>
   </div>
 
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/javascript/">javascript</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/03/22/2016-03-22/" data-title="实现安卓 ios客户端检测的方法 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/05/21/2016-05-21/" data-title="CSS3 text-rendering属性 | 小白爱吃瓜的博客" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -114,19 +116,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/03/23/2016-03-23/" title="css清除浮动的问题">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  css清除浮动的问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/03/21/2016-03-21/"  title="截取地址栏url里的参数">
+<a href="/2016/05/20/2016-05-20/"  title="jquery插件制作">
  <strong>NEXT:</strong><br/> 
- <span>截取地址栏url里的参数
+ <span>jquery插件制作
 </span>
 </a>
 </div>
@@ -143,7 +137,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios"><span class="toc-number">1.</span> <span class="toc-text">今天做项目时遇到个问题，需要浏览器能够检测手机类型是安卓还是ios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#具体实现方法如下："><span class="toc-number">1.1.</span> <span class="toc-text">具体实现方法如下：</span></a></li></ol></li></ol>
+  
   </div>
 
 <div id="asidepart">
